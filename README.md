@@ -1,3 +1,4 @@
+﻿<<<<<<< HEAD
 ﻿# Rails Decal Fall 2015 Homework 1
 This homework assignment involves writing scripts in ruby in order to get a feel for the Ruby
 programming language.
