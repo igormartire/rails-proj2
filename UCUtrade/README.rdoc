@@ -2,8 +2,8 @@
 
 ==== Remember:
 
-* +bundle exec rake db:migrate+
-* +bundle exec rake db:seed+
+* <tt>bundle exec rake db:migrate</tt>
+* <tt>bundle exec rake db:seed</tt>
 
 ==== Tasks
 
@@ -15,14 +15,14 @@
 ---
 
 ==== How to Branch/Merge with git
-*git branch my_branch #creates the branch
-*git checkout my_branch #now you are in your branch
-*do all the editing that you want, add and commit
-*git push origin my_branch #pushes the branch to the remote (here the name of the remote is origin)
-*git checkout master #now you are in the master branch
-*git pull origin master #update the master branch with the remote
-*git merge my_branch #my_branch is now being merged to master
-*git push origin master #push the master branch that was merged with my_branch
+* <tt>git branch my_branch</tt> #creates the branch
+* <tt>git checkout my_branch</tt> #now you are in your branch
+* do all the editing that you want, add and commit
+* <tt>git push origin my_branch</tt> #pushes the branch to the remote (here the name of the remote is origin)
+* <tt>git checkout master</tt> #now you are in the master branch
+* <tt>git pull origin master</tt> #update the master branch with the remote
+* <tt>git merge my_branch</tt> #my_branch is now being merged to master
+* <tt>git push origin master</tt> #push the master branch that was merged with my_branch
 
 ---
 
