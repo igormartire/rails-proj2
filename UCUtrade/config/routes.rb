@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
     get '/item', to: 'items#show', as: 'item'
     get '/items', to: 'items#index', as: 'items'
-    resources :item
+    # resources :item
 end
