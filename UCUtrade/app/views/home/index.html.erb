@@ -1,0 +1,16 @@
+<h2> Welcome to UCUtrade! </h2>
+
+<h4> Search Engine </h4>
+<% form_tag items_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<hr>
+<% @items.each do |i| %>
+    <% if i.available? %>
+        Item: <%= link_to i.name, item_path %>
+        User ID: <%= i.user_id %>
+        Price: <%= i.price %>
+        <br>
+    <% end %>
+<% end %>
