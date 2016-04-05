@@ -1,5 +1,31 @@
 == README
 
+==== Remember:
+
+* <tt>bundle exec rake db:migrate</tt>
+* <tt>bundle exec rake db:seed</tt>
+
+==== Tasks
+
+[David] Show Item + Comments
+[Igor] Devise + Show User (User profile page)
+[Tiffany] Create/Edit Item
+[Yitian] Homepage + Search Page (w/ basic search)
+
+---
+
+==== How to Branch/Merge with git
+* <tt>git branch my_branch</tt> #creates the branch
+* <tt>git checkout my_branch</tt> #now you are in your branch
+* do all the editing that you want, add and commit
+* <tt>git push origin my_branch</tt> #pushes the branch to the remote (here the name of the remote is origin)
+* <tt>git checkout master</tt> #now you are in the master branch
+* <tt>git pull origin master</tt> #update the master branch with the remote
+* <tt>git merge my_branch</tt> #my_branch is now being merged to master
+* <tt>git push origin master</tt> #push the master branch that was merged with my_branch
+
+---
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
