@@ -1,0 +1,7 @@
+<ul style="list-style-type:none">
+	<% @users.each do |user| %>
+		<% user.items.each do |item| %> 
+			<li><%= item.name %></li>
+		<% end %> 
+	<% end %> 
+</ul>
