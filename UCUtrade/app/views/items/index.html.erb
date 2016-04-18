@@ -8,7 +8,7 @@
 <hr>
 <% @items.each do |i| %>
     <% if i.available? %>
-        Item: <%= link_to i.name, item_path %>
+    	<%= render i %>
         User ID: <%= i.user_id %>
         Price: <%= i.price %>
         <br>
