@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     end
     
 	def new
-		@pitem = Item.new #Creates an empty user object.
+		@item = Item.new #Creates an empty user object.
 	end
 
   	def create
@@ -24,8 +24,21 @@ class ItemsController < ApplicationController
     	end
   	end
   	
-  	def edit
-  	end
-  	
+    def edit
+    @item = Item.find(params[:id])
+    end
 
+    def update
+    @item = Item.find(params[:id])
+      if @item.update_attributes(params[:item])
+        redirect_to current_user
+      else
+        render :action => :edit
+      end
+    end
+    
+    private
+  	def user_params
+  		params.require(:item).permit(:name, :price, :description)
+  	end
 end
