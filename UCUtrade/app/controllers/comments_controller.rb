@@ -6,12 +6,18 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		@comment = @commentable.comments.new comment_params
+		@comment = Comment.new comment_params
 
 		if @comment.save
 			redirect_to :back, notice: 'Success!'
 		else 
 			redirect_to :back, notice: 'Failed!'
+		end
+
+		if request.xhr?
+			render :json => Comment.last(5)
+		else 
+			redirect_to comments_path 
 		end
 	end
 

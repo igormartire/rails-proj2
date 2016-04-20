@@ -28,6 +28,14 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @presenter = {
+      :comments => Comment.last(5),
+      :form => {
+        :action => comments_path,
+        :csrf_param => request_forgery_protection_token,
+        :csrf_token => form_authenticity_token
+      }
+    }
   end
   	
 end
