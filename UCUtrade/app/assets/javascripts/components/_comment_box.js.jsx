@@ -18,7 +18,6 @@ var CommentBox = React.createClass({
   render: function () {
     return (
       <div className="comment-box">
-        <img src={ this.props.imgSrc } alt={ this.props.imgAlt } />
         <CommentList comments={ this.state.comments } />
         <hr />
         <h2>Add a comment:</h2>
