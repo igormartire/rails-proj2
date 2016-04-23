@@ -8,14 +8,10 @@ class CommentsController < ApplicationController
 	def create
 		@comment = Comment.new comment_params
 
-		if @comment.save
-			redirect_to :back, notice: 'Success!'
-		else 
-			redirect_to :back, notice: 'Failed!'
-		end
+		@comment.save
 
 		if request.xhr?
-			render :json => Comment.last(5)
+			render :json => Comment.where(["item_id = ?", comment_params[:item_id].to_i])
 		else 
 			redirect_to comments_path 
 		end
@@ -24,7 +20,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:body)
+		params.require(:comment).permit(:username, :text, :item_id)
 	end
 
 	def find_commentable

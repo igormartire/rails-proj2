@@ -29,9 +29,10 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @presenter = {
-      :comments => Comment.last(5),
+      :comments => Comment.where("item_id = :id", { id: params[:id] }),
       :form => {
         :action => comments_path,
+        :id => params[:id],
         :csrf_param => request_forgery_protection_token,
         :csrf_token => form_authenticity_token
       }
