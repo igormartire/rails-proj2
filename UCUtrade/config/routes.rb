@@ -6,4 +6,10 @@ Rails.application.routes.draw do
     get '/item', to: 'items#show', as: 'item'
     get '/items', to: 'items#index', as: 'items'
     # resources :item
+
+ 	get 'items/new', to: 'items#new'
+ 	post 'items', to: "items#create"
+
+ 	get 'items/:id/edit', to: 'items#edit'
+ 	patch 'items/:id', to: 'items#update'
 end
