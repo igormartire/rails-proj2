@@ -24,7 +24,6 @@ var CommentForm = React.createClass({
         <p><input type="hidden" name={ this.props.form.csrf_param } value={ this.props.form.csrf_token } /></p>
         <p><input ref="username" name="comment[username]" placeholder="Your name" /></p>
         <p><textarea ref="text" name="comment[text]" placeholder="Say something..." /></p>
-        <p><input type="hidden" name="comment[item_id]" value={this.props.form.id} /></p>
         <p><button type="submit">Post comment</button></p>
       </form>
     )
