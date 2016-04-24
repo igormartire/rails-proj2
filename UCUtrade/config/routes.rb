@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
 
-    root to: 'items#index'
-    devise_for :users
+  resources :items do
+  	resources :comments
+  end
 
-    get '/item', to: 'items#show', as: 'item'
-    get '/items', to: 'items#index', as: 'items'
-    # resources :item
+  resources :comments do 
+  	resources :comments
+  end
 
- 	get 'items/new', to: 'items#new'
- 	post 'items', to: "items#create"
+  root to: 'items#index'
+  devise_for :users
 
- 	get 'items/:id/edit', to: 'items#edit'
- 	patch 'items/:id', to: 'items#update'
+  get '/items', to: 'items#index'
+  # resources :item
+
+  get 'items/new', to: 'items#new'
+  post 'items', to: "items#create"
+
+  get 'items/:id/edit', to: 'items#edit'
+  patch 'items/:id', to: 'items#update'
 end
