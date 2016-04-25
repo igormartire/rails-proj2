@@ -26,10 +26,10 @@ class ItemsController < ApplicationController
   	def create
     	  @item = Item.create(user_params)
     	  @item.available = true;
-    	  @item.current_user = current_user.id
+    	  @item.user_id = current_user
     	  if @item.save #If saving the user was successful
     		    flash[:error] = nil
-      		  redirect_to current_user #Go to the show view of the user
+      		  redirect_to action: "index" #Go to the show view of the user
     	  else
     		    flash[:error] = @item.errors.full_messages.to_sentence
       		  render "new" #Go to the new view for
