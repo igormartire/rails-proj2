@@ -10,6 +10,19 @@ class ItemsController < ApplicationController
 		    @item = Item.new #Creates an empty user object.
 	  end
 
+    def show
+      @item = Item.find(params[:id])
+      @presenter = {
+        :comments => Comment.where("item_id = :id", { id: params[:id] }),
+        :form => {
+          :action => comments_path,
+          :id => params[:id],
+          :csrf_param => request_forgery_protection_token,
+          :csrf_token => form_authenticity_token
+        }
+      }
+    end
+  
   	def create
     	  @item = Item.create(user_params)
     	  @item.available = true;
