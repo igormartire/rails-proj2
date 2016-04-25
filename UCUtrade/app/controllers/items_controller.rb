@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     	  @item.user_id = current_user.id
     	  if @item.save #If saving the user was successful
     		    flash[:error] = nil
-      		  redirect_to current_user #Go to the show view of the user
+      		  redirect_to action: "index" #Go to the show view of the user
     	  else
     		    flash[:error] = @item.errors.full_messages.to_sentence
       		  render "new" #Go to the new view for
