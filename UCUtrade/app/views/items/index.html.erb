@@ -11,15 +11,5 @@
 <% end %>
 </div>
 <hr>
-<div class="container">
-<% @items.each do |i| %>
-    <% if i.available? %>
-        <div class="item">
-        	<div style="font-weight:bold"><%= render i %> </div>
-            User ID: <%= i.user_id %> <br>
-            Price: <%= i.price %> <br>
-        </div>
-    <% end %>
-<% end %>
-</div>
+<%= render @items %>
 </div>

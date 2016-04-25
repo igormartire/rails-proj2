@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
             @items = Item.search(params[:search])
         end
     end
-    
+
 	  def new
 		    @item = Item.new #Creates an empty user object.
 	  end
@@ -22,11 +22,11 @@ class ItemsController < ApplicationController
         }
       }
     end
-  
+
   	def create
     	  @item = Item.create(user_params)
     	  @item.available = true;
-    	  @item.current_user = current_user.id
+    	  @item.user_id = current_user.id
     	  if @item.save #If saving the user was successful
     		    flash[:error] = nil
       		  redirect_to current_user #Go to the show view of the user
@@ -35,12 +35,13 @@ class ItemsController < ApplicationController
       		  render "new" #Go to the new view for
     	  end
   	end
-  	
+
     def edit
         @item = Item.find(params[:id])
     end
 
     def update
+      @item = Item.find(params[:id])
       if params[:item][:name]
         @item.name = params[:item][:name]
       end
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
           render :action => :edit
       end
     end
-    
+
     private
   	def user_params
   		  params.require(:item).permit(:name, :price, :description, :avatar)

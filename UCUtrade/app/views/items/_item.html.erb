@@ -1,1 +1,14 @@
-<%= link_to item.name, item %>
+<% if item.available? %>
+    <div class="col-xs-6 col-sm-4">
+      <div class="item">
+        <% if @user and @user == current_user %>
+          <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-primary" %>
+        <% end %>
+        <div style="font-weight:bold">
+          <%= link_to item.name, item %>
+        </div>
+          User ID: <%= item.user_id %> <br>
+          Price: <%= item.price %> <br>
+      </div>
+    </div>
+<% end %>

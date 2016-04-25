@@ -9,25 +9,16 @@
   margin: 25px;
 }
 
-.container {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(4, 250px);
-    grid-column-gap: 20px;
-
-}
-
 .search{
     margin-left: 33%;
 }
 
 .item {
-    width: 260px;
-    height: 300px;
-   padding: 15px;
-   border-style: solid;
-   border-color: #B5ACD9;
-   margin: 25px;
+  height: 300px;
+  border-style: solid;
+  border-color: #B5ACD9;
+  margin: 25px;
+  padding-top:10px;
   font-size: 75%;
   text-align: center;
 }
