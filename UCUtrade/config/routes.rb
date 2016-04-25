@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   	resources :comments
   end
 
-  resources :comments do 
+  resources :comments do
   	resources :comments
   end
 
@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   get 'items/:id/edit', to: 'items#edit'
   patch 'items/:id', to: 'items#update'
+
+  get 'users/:id', to: 'users#show', as: 'user'
 end
