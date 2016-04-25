@@ -2,5 +2,9 @@
 <h3>Name: <%=@item.name%></h3>
 <h4>Price: $<%=@item.price%></h4>
 <p><strong>Description: </strong><%=@item.description%></p>
+Image:
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
 <%= react_component('CommentBox', {:presenter => @presenter.to_json}, {:prerender => true}) %>
 </div>
