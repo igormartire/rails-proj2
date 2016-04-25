@@ -41,25 +41,23 @@ class ItemsController < ApplicationController
     end
 
     def update
-        @item = Item.find(params[:id])
-        if params[:item][:name]
-          @item.name = params[:item][:name]
-        end
-        if params[:item][:price]
-          @item.price = params[:item][:price]
-        end
-        if params[:item][:description]
-          @item.description = params[:item][:description]
-        end
-        if params[:item][:avatar]
-          @item.avatar = params[:item][:avatar]
-        end
-        
-        if @item.save
-            redirect_to "index"
-        else
-            render :action => :edit
-        end
+      if params[:item][:name]
+        @item.name = params[:item][:name]
+      end
+      if params[:item][:price]
+        @item.price = params[:item][:price]
+      end
+      if params[:item][:description]
+        @item.description = params[:item][:description]
+      end
+      if params[:item][:avatar]
+        @item.avatar = params[:item][:avatar]
+      end
+      if @item.save
+          redirect_to action: "show"
+      else
+          render :action => :edit
+      end
     end
     
     private
