@@ -51,4 +51,8 @@ group :development, :test do
   gem 'sunspot_rails'
   gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
   gem 'bootstrap', '~> 4.0.0.alpha3'
+
+  gem 'rails_12factor', group: :production
+
+  ruby "2.2.0"
 end
