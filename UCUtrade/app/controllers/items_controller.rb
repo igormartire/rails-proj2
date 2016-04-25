@@ -55,8 +55,8 @@ class ItemsController < ApplicationController
           @item.avatar = params[:item][:avatar]
         end
         
-        if @item.update_attributes(params[:item])
-            redirect_to current_user
+        if @item.save
+            redirect_to "index"
         else
             render :action => :edit
         end
