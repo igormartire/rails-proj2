@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
         end
         
         if @item.save
-            redirect_to "index"
+            redirect_to action: "show"
         else
             render :action => :edit
         end
