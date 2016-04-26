@@ -22,6 +22,9 @@ module UCUtrade
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.initialize_on_precompile = false
+    config.assets.precompile += %w( server_rendering.js)
+    config.react.server_renderer_options = {
+        files:["server_rendering.js"],
+    }
   end
 end
