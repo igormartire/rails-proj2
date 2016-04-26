@@ -25,9 +25,20 @@
 
 .item > img {
   display: block;
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 180px;
+  max-width: 180px;
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.edit_button {
+  display:none;
+  position: absolute;
+  margin-top: 90%;
+  margin-left: -35px;
+}
+
+.item:hover .edit_button {
+  display:block;
 }
