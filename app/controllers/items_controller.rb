@@ -34,9 +34,9 @@ class ItemsController < ApplicationController
     	  @item = Item.create(item_params)
     	  @item.available = true;
     	  @item.user_id = current_user.id
-    	  if @item.save #If saving the user was successful
+    	  if @item.save
     		    flash[:error] = nil
-      		  redirect_to current_user #Go to the show view of the user
+      		  redirect_to current_user
     	  else
     		    flash[:error] = @item.errors.full_messages.to_sentence
       		  render "new" #Go to the new view for
@@ -58,11 +58,11 @@ class ItemsController < ApplicationController
       if params[:item][:description]
         @item.description = params[:item][:description]
       end
-      if params[:item][:avatar]
-        @item.avatar = params[:item][:avatar]
-      end
+
+      @item.available = params[:item][:available]
+
       if @item.save
-          redirect_to action: "show"
+          redirect_to user_path(current_user.id)
       else
           render :action => :edit
       end
