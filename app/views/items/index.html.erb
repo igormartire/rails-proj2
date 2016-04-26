@@ -1,16 +1,20 @@
-
 <div class="page">
 
-<h2> Waelcome to UCUtrade! </h2>
-<br>
+  <h2> Welcome to UCUtrade! </h2>
+  <br>
 
-<div class="search">
-<h4> Search Engine </h4>
-<%= form_tag items_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-</div>
-<hr>
-<%= render @items %>
+  <div class="search">
+    <h4> Search Engine </h4>
+    <%= form_tag items_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
+
+  <% if @items.empty? %>
+    <p>Your search hasn't returned any results.</p>
+  <% else %>
+    <%= render @items %>
+  <% end %>
+
 </div>
