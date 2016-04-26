@@ -76,4 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'cryptic-beyond-59326.heroku.com' }
+  ActionMailer::Base.smtp_settings = {
+    :address    => "smtp.sendgrid.net",
+    :port       => 25,
+    :user_name  => ENV['davidnahm'],
+    :password   => ENV['railsdecal123'],
+    :domain     => ENV['cryptic-beyond-59326.herokuapp.com'],
+    :authentication  => :plain
+  }
 end
