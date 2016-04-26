@@ -11,7 +11,7 @@
     <div class="form-group">
         <%= f.label "Price ($)", class: 'col-sm-2 control-label'  %>
         <div class="col-sm-6">
-            <%= f.number_field :price, class: 'form-control', required: true  %>
+            <%= f.number_field :price, class: 'form-control', required: true, :step => 0.01  %>
         </div>
     </div>
     <div class="form-group">
