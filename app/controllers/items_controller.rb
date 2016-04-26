@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
     def index
-        @items = Item.all
+        @items = Item.find_by available: true
         if params[:search]
-            @items = Item.search(params[:search])
+            @items = @items.search(params[:search])
         end
     end
 
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     end
 
   	def create
-    	  @item = Item.create(user_params)
+    	  @item = Item.create(item_params)
     	  @item.available = true;
     	  @item.user_id = current_user.id
     	  if @item.save #If saving the user was successful
@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
     end
 
     private
-  	def user_params
+  	def item_params
   		  params.require(:item).permit(:name, :price, :description, :avatar)
   	end
 end

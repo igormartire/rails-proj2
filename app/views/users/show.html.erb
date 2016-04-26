@@ -1,10 +1,16 @@
 <div class="page">
 <h1>User</h1>
+  <br/>
   <p>E-mail: <%=@user.email%></p>
+  <br/>
+  <% if @user == current_user %>
+    <%= link_to 'Add item', items_new_path, class: "btn btn-primary" %>
+  <% end %>
+  <br/>
   <h2>Items</h2>
-  <%= render @user.items%>
- <br />
- <% if @user == current_user %>
-   <%= link_to 'Add item', items_new_path, class: "btn btn-primary" %>
- <% end %>
+  <%= render @user.items.where "available = true"%>
+  <% if @user == current_user %>
+  <h2>Unavailable Items</h2>
+    <%= render @user.items.where "available = false"%>
+  <% end %>
 </div>
