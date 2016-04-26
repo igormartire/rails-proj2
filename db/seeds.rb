@@ -6,24 +6,50 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u1 = User.create(:email => "user@ucut.com", :password => 'password', :password_confirmation => 'password')
-u2 = User.create(:email => "user2@ucut.com", :password => 'password', :password_confirmation => 'password')
-u3 = User.create(:email => "user3@ucut.com", :password => 'password', :password_confirmation => 'password')
-u4 = User.create(:email => "user4@ucut.com", :password => 'password', :password_confirmation => 'password')
-u5 = User.create(:email => "user5@ucut.com", :password => 'password', :password_confirmation => 'password')
-i1 = Item.create(:name => "Item1", :user_id => 1, :description => "Line 1", :price => "10.00", :available => true)
-i2 = Item.create(:name => "Item2", :user_id => 1, :description => "Line 1", :price => "20.00", :available => true)
-i3 = Item.create(:name => "Item3", :user_id => 1, :description => "Line 1\nLine 2", :price => "30.00", :available => true)
-i4 = Item.create(:name => "Item4", :user_id => 2, :description => "Line 1\nLine 2", :price => "40.00", :available => true)
-i5 = Item.create(:name => "Item5", :user_id => 2, :description => "Line 1\nLine 2\nLine 3", :price => "50.00", :available => true)
-i6 = Item.create(:name => "Item6", :user_id => 2, :description => "Line 1\nLine 2\nLine 3", :price => "60.00", :available => true)
-i7 = Item.create(:name => "Item7", :user_id => 3, :description => "Line 1\nLine 2\nLine 3\nLine4", :price => "70.00", :available => true)
-i8 = Item.create(:name => "Item8", :user_id => 3, :description => "Line 1\nLine 2\nLine 3\nLine4", :price => "80.00", :available => true)
-i9 = Item.create(:name => "Item9", :user_id => 3, :description => "Line 1\nLine 2\nLine 3\nLine4\nLine5", :price => "90.00", :available => true)
-i10 = Item.create(:name => "Item10", :user_id => 4, :description => "Line 1\nLine 2\nLine 3\nLine4\nLine5", :price => "100.00", :available => true)
-c1 = Comment.create(:user_id => u5.id, :username => "abc", :item_id => i1.id, :text => "Hi, is there any scratch on that?")
-c2 = Comment.create(:user_id => u1.id, :username => "david", :item_id => i1.id, :text => "Yes, there is a little scratch on the right side.")
-c3 = Comment.create(:user_id => u4.id, :username => "igor", :item_id => i1.id, :text => "Could you upload an image of that?")
-c4 = Comment.create(:user_id => u1.id, :username => "tiffany", :item_id => i1.id, :text => "Done.")
-c5 = Comment.create(:user_id => u3.id, :username => "yitian", :item_id => i5.id, :text => "Comment Line 1.\nComment Line 2;\nComment Line 3.")
-c6 = Comment.create(:user_id => u2.id, :username => "cba", :item_id => i9.id, :text => "Comment Line 1.\nComment Line 2;\nComment Line 3.")
+##########
+# Users
+##########
+
+u1 = User.new(id: 1, email: "ucut@ucut.com", password: 'password', password_confirmation: 'password')
+u1.skip_confirmation!
+u1.save!
+
+u2 = User.new(id: 2, email: "igormartire@berkeley.edu", password: 'password', password_confirmation: 'password')
+u2.skip_confirmation!
+u2.save!
+
+##########
+# Items
+##########
+
+i1 = Item.create(id: 1, name: "Sunglasses", description: "Ray Ban original, used for 1 year, small marks on the left frame, polarized, UV protection", created_at: "2016-04-26 19:05:52", updated_at: "2016-04-26 19:05:52", user_id: 1, available: false, avatar_file_name: "sunglasses.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 174225, avatar_updated_at: "2016-04-26 19:05:51", price: 99.90)
+
+i2 = Item.create(id: 2, name: "Cap", description: "I once got this cap for birthday but I’ve never really used it. Perfect conditions.", created_at: "2016-04-26 19:07:20", updated_at: "2016-04-26 19:07:20", user_id: 2, available: true, avatar_file_name: "cap.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 6845, avatar_updated_at: "2016-04-26 19:07:20", price: 10)
+
+i3 = Item.create(id: 3, name: "Macbook Pro", description: "This Macbook Pro has been my friend for a long while, but now it is time to move on to a newer version. If you are, however, looking for something cheap but of quality, here is your chance! This Macbook is in very good conditions, since I'm a very careful person and always cleaned it weekly in a very diligent way. Sometimes it may seem a little slow, but it will probably be fine if don't use for a lot of things at the same time as I do. I'm also flexible about the price, which, let's agree, is very reasonable!", created_at: "2016-04-26 19:11:29", updated_at: "2016-04-26 19:11:30", user_id: 1, available: true, avatar_file_name: "macbook.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 55227, avatar_updated_at: "2016-04-26 19:11:29", price: 587.12)
+
+i4 = Item.create(id: 4, name: "Watch", description: "This watch is beautiful, perfect for you that would like to consider yourself a traveler. With it you will always remember it is five o'clock somewhere. ;)", created_at: "2016-04-26 19:13:24", updated_at: "2016-04-26 19:13:26", user_id: 2, available: true, avatar_file_name: "watch.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 460207, avatar_updated_at: "2016-04-26 19:13:24", price: 148.75)
+
+############
+# Comments
+############
+
+c1 = Comment.create(id: 1, user_id: nil, item_id: 1, text: "What size?", created_at: "2016-04-26 19:23:39", updated_at: "2016-04-26 19:23:39", username: "Bob")
+
+c2 = Comment.create(id: 2, user_id: 1, item_id: 1, text: "M", created_at: "2016-04-26 19:23:50", updated_at: "2016-04-26 19:23:50", username: "ucut")
+
+c3 = Comment.create(id: 3, user_id: nil, item_id: 4, text: "Why would I want to remember it is five o'clock somewhere?", created_at: "2016-04-26 19:25:17", updated_at: "2016-04-26 19:25:17", username: "Jack")
+
+c4 = Comment.create(id: 4, user_id: 2, item_id: 4, text: "It was just a joke. Musical reference: watch?v=BPCjC543llU", created_at: "2016-04-26 19:25:52", updated_at: "2016-04-26 19:25:52", username: "igormartire")
+
+c5 = Comment.create(id: 5, user_id: nil, item_id: 4, text: "Omg, that was funny. Now I want the watch. Can you do for 100$?", created_at: "2016-04-26 19:26:29", updated_at: "2016-04-26 19:26:29", username: "Jack")
+
+c6 = Comment.create(id: 6, user_id: 2, item_id: 4, text: "Sorry, no. :/", created_at: "2016-04-26 19:26:39", updated_at: "2016-04-26 19:26:39", username: "igormartire")
+
+c7 = Comment.create(id: 7, user_id: nil, item_id: 4, text: "Damn... at least it is five o'clock somewhere.", created_at: "2016-04-26 19:27:17", updated_at: "2016-04-26 19:27:17", username: "Jack")
+
+c8 = Comment.create(id: 8, user_id: 2, item_id: 4, text: "Yeah, you got the spirit.", created_at: "2016-04-26 19:27:31", updated_at: "2016-04-26 19:27:31", username: "igormartire")
+
+c9 = Comment.create(id: 9, user_id: nil, item_id: 3, text: "Wait, which version is it? Mid 2014?", created_at: "2016-04-26 19:29:23", updated_at: "2016-04-26 19:29:23", username: "Richard")
+
+c10 = Comment.create(id: 10, user_id: 1, item_id: 3, text: "No, it is Late 2013.", created_at: "2016-04-26 19:29:41", updated_at: "2016-04-26 19:29:41", username: "ucut")
