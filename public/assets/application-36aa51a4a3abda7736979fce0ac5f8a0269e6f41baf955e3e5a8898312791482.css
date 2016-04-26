@@ -1,0 +1,63 @@
+/* line 5, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.page {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin: 50px;
+}
+
+/* line 12, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.search {
+  margin-left: 33%;
+}
+
+/* line 16, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.item {
+  height: 300px;
+  border-style: solid;
+  border-color: #B5ACD9;
+  margin: 25px;
+  padding-top: 10px;
+  font-size: 75%;
+  text-align: center;
+}
+
+/* line 26, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.item > img {
+  display: block;
+  max-height: 180px;
+  max-width: 180px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 35, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.edit_button {
+  display: none;
+  position: absolute;
+  margin-top: 90%;
+  margin-left: -35px;
+}
+
+/* line 42, /Users/igormartire/Documents/Berkeley/courses/cs198/final/cryptic-beyond-59326/app/assets/stylesheets/items.scss */
+.item:hover .edit_button {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ // *= bootstrap-sprockets
+ // *= bootstrap
+
+ */
