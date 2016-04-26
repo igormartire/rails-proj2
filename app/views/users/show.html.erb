@@ -1,24 +1,35 @@
 <div class="page">
-<h1>User</h1>
+<h1>User Profile</h1>
   <br/>
   <p>E-mail: <%=@user.email%></p>
   <br/>
   <% if @user == current_user %>
-    <%= link_to 'Add item', items_new_path, class: "btn btn-primary" %>
+    <%= link_to 'Add item', items_new_path, class: "btn btn-success btn-lg" %>
   <% end %>
+  <br/>
   <br/>
   <div class="row">
     <h2>Available Items</h2>
   </div>
   <div class="row">
-    <%= render @user.items.where "available = true"%>
+    <% @items = @user.items.where "available = true" %>
+    <% if @items %>
+      <%= render @items %>
+    <% else %>
+      <p>No available items.</p>
+    <% end %>
   </div>
   <% if @user == current_user %>
     <div class="row">
       <h2>Unavailable Items</h2>
     </div>
     <div class="row">
-      <%= render @user.items.where "available = false"%>
+      <% @un_items = @user.items.where "available = false" %>
+      <% if @un_items %>
+        <%= render @un_items%>
+      <% else %>
+        <p>No unavailable items.</p>
+      <% end %>
     </div>
   <% end %>
 </div>
