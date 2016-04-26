@@ -9,6 +9,11 @@
         </div>
           User ID: <%= item.user_id %> <br>
           Price: <%= item.price %> <br>
+          <% if item.avatar %>
+            <%= image_tag item.avatar.url %>
+          <% else %>
+            <p>No image available</p>
+          <% end %>
       </div>
     </div>
 <% end %>
