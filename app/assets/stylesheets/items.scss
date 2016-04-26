@@ -1,0 +1,33 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page{
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 250px);
+    grid-column-gap: 20px;
+
+}
+
+.search{
+    margin-left: 33%;
+}
+
+.item {
+    width: 260px;
+    height: 300px;
+   padding: 15px;
+   border-style: solid;
+   border-color: #B5ACD9;
+   margin: 25px;
+  font-size: 75%;
+  text-align: center;
+}
