@@ -7,9 +7,9 @@
   <p><strong>Description: </strong><%=@item.description%></p>
   <div style="width: 300px; height: 300px;">
     <% if @item.avatar.file? %>
-      <%= image_tag @item.avatar.url(:medium)%>
+      <%= image_tag @item.avatar.url(:medium), class: "img-thumbnail"%>
     <% else %>
-      <%= image_tag image_url("missing.png") %>
+      <%= image_tag image_url("missing.png"), class: "img-thumbnail"%>
     <% end %>
   </div>
   <br>
