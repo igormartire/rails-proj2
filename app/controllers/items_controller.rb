@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     def index
-        @items = Item.find_by available: true
+        @items = Item.where available: true
         if params[:search]
             @items = @items.search(params[:search])
         end
