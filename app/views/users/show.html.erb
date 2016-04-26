@@ -7,10 +7,18 @@
     <%= link_to 'Add item', items_new_path, class: "btn btn-primary" %>
   <% end %>
   <br/>
-  <h2>Items</h2>
-  <%= render @user.items.where "available = true"%>
+  <div class="row">
+    <h2>Available Items</h2>
+  </div>
+  <div class="row">
+    <%= render @user.items.where "available = true"%>
+  </div>
   <% if @user == current_user %>
-  <h2>Unavailable Items</h2>
-    <%= render @user.items.where "available = false"%>
+    <div class="row">
+      <h2>Unavailable Items</h2>
+    </div>
+    <div class="row">
+      <%= render @user.items.where "available = false"%>
+    </div>
   <% end %>
 </div>
