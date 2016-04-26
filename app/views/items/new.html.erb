@@ -1,9 +1,36 @@
-<h1>New Item</h1>
+<% content_for :devise_content do%>
+  <h2>New Item</h2>
 
-<%= simple_form_for @item do |f| %>
-  <%= f.input :name, label: 'Item Name:', error: 'Name is mandatory' %>
-  <%= f.input :price, as: :integer%>
-  <%= f.input :description, as: :text %>
-  <%= f.input :avatar, as: :file %>
-  <%= f.button :submit %>
+  <%= form_for(@item, html: { method: :post, class: 'form-horizontal', multipart: true }) do |f| %>
+    <div class="form-group">
+        <%= f.label :name, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.text_field :name, autofocus: true, class: 'form-control', required: true %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label "Price ($)", class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.number_field :price, class: 'form-control', required: true  %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :description, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.text_area :description, class: 'form-control'  %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :image, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.file_field :avatar, class: 'form-control'  %>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+            <%= f.submit "Create", class: "btn btn-success" %>
+        </div>
+    </div>
+  <% end %>
+
 <% end %>
