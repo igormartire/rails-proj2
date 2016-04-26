@@ -4,15 +4,16 @@
   <br>
 
   <div class="search">
-    <h4> Search Engine </h4>
+    <h4> Search for items </h4>
     <%= form_tag items_path, :method => 'get' do %>
         <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= submit_tag "Go", :name => nil %>
     <% end %>
   </div>
 
   <% if @items.empty? %>
-    <p>Your search hasn't returned any results.</p>
+    <br/>
+    <p>Sorry, no results were found.</p>
   <% else %>
     <%= render @items %>
   <% end %>
