@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
             @items = Item.search(params[:search])
         end
     end
-    
+
 	  def new
 		    @item = Item.new #Creates an empty user object.
 	  end
@@ -22,7 +22,14 @@ class ItemsController < ApplicationController
         }
       }
     end
-  
+
+    def destroy
+      @item = Item.find(params[:id])
+      @item.destroy
+      flash.notice = "Item removed successfully."
+      redirect_to session.delete(:return_to)
+    end
+
   	def create
     	  @item = Item.create(user_params)
     	  @item.available = true;
@@ -35,7 +42,7 @@ class ItemsController < ApplicationController
       		  render "new" #Go to the new view for
     	  end
   	end
-  	
+
     def edit
         @item = Item.find(params[:id])
     end
@@ -60,7 +67,7 @@ class ItemsController < ApplicationController
           render :action => :edit
       end
     end
-    
+
     private
   	def user_params
   		  params.require(:item).permit(:name, :price, :description, :avatar)
