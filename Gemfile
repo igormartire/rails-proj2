@@ -31,7 +31,6 @@ gem "paperclip", "~> 5.0.0.beta1"
 
 gem 'devise'
 
-gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -53,6 +52,8 @@ group :development, :test do
   gem 'spring'
 
   gem 'sqlite3'
+
+  gem 'bootstrap-sass', '~> 3.2.0'
 
   gem 'sunspot_rails'
   gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development

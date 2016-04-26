@@ -1,0 +1,32 @@
+/* line 5, /Users/David/Desktop/rails/proj2/app/assets/stylesheets/items.scss */
+.page {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin: 50px;
+}
+
+/* line 12, /Users/David/Desktop/rails/proj2/app/assets/stylesheets/items.scss */
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 250px);
+  grid-column-gap: 20px;
+}
+
+/* line 20, /Users/David/Desktop/rails/proj2/app/assets/stylesheets/items.scss */
+.search {
+  margin-left: 33%;
+}
+
+/* line 24, /Users/David/Desktop/rails/proj2/app/assets/stylesheets/items.scss */
+.item {
+  width: 260px;
+  height: 300px;
+  padding: 15px;
+  border-style: solid;
+  border-color: #B5ACD9;
+  margin: 25px;
+  font-size: 75%;
+  text-align: center;
+}

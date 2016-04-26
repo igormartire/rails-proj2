@@ -14,10 +14,11 @@
 <div class="container">
 <% @items.each do |i| %>
     <% if i.available? %>
-        <div>
-        	<%= render i %>
-            User ID: <%= i.user_id %>
-            Price: <%= i.price %>
+        <div class="item">
+        	<div style="font-weight:bold"><%= render i %> </div>
+            User ID: <%= i.user_id %> <br>
+            Price: <%= i.price %> <br>
+            Image:
         </div>
     <% end %>
 <% end %>

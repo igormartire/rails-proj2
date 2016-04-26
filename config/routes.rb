@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get 'items/:id/edit', to: 'items#edit'
   get 'items/:id', to: 'items#show'
   patch 'items/:id', to: 'items#update'
+
+  get 'users/:id', to: 'users#show', as: 'user'
 end
