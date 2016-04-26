@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 
 gem "paperclip", "~> 5.0.0.beta1"
-
+gem 'aws-sdk'
 gem 'devise'
 
 
@@ -57,5 +57,5 @@ group :development, :test do
 
   gem 'sunspot_rails'
   gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
-  
+
 end
