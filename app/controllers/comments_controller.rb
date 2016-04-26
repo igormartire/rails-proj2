@@ -8,11 +8,7 @@ class CommentsController < ApplicationController
 	def create
 		@comment = Comment.new comment_params
 		@comment.save
-		if request.xhr?
-			render :json => Comment.where(["item_id = ?", comment_params[:item_id].to_i])
-		else 
-			redirect_to comments_path 
-		end
+		render :json => Comment.where(["item_id = ?", comment_params[:item_id].to_i])
 	end
 
 	private
