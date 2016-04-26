@@ -1,5 +1,5 @@
 <% if item.available? %>
-    <div class="col-xs-6 col-sm-4">
+    <div class="col-sm-6 col-md-4">
       <div class="item">
         <% if @user and @user == current_user %>
           <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-primary" %>
