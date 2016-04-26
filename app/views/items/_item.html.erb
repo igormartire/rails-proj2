@@ -10,9 +10,9 @@
       User: <%= link_to User.find(item.user_id).username, user_path(item.user_id) %> <br>
       Price: <%= ActionController::Base.helpers.number_to_currency(item.price) %> <br>
       <% if item.avatar.file? %>
-        <%= image_tag item.avatar.url %>
+        <%= image_tag item.avatar.url, :class => "img-responsive"  %>
       <% else %>
-        <%= image_tag image_url("missing.png") %>
+        <%= image_tag image_url("missing.png"), :class => "img-responsive"  %>
       <% end %>
   </div>
 </div>
