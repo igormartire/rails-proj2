@@ -1,19 +1,19 @@
 <% if item.available? %>
-    <div class="col-sm-6 col-md-4">
-      <div class="item">
-        <% if @user and @user == current_user %>
-          <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-primary" %>
-        <% end %>
-        <div style="font-weight:bold">
-          <%= link_to item.name, item %>
-        </div>
-          User ID: <%= item.user_id %> <br>
-          Price: <%= item.price %> <br>
-          <% if item.avatar %>
-            <%= image_tag item.avatar.url, class: "img-responsive"%>
-          <% else %>
-            <p>No image available</p>
-          <% end %>
+  <div class="col-sm-6 col-md-4">
+    <div class="item">
+      <% if @user and @user == current_user %>
+        <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-primary" %>
+      <% end %>
+      <div style="font-weight:bold">
+        <%= link_to item.name, item %>
       </div>
+        User ID: <%= item.user_id %> <br>
+        Price: <%= item.price %> <br>
+        <% if item.avatar.file? %>
+          <%= image_tag item.avatar.url %>
+        <% else %>
+          <%= image_tag "https://s3-us-west-1.amazonaws.com/rorproj/avatars/original/missing.png" %>
+        <% end %>
     </div>
+  </div>
 <% end %>
