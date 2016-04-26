@@ -18,10 +18,6 @@
         	<div style="font-weight:bold"><%= render i %> </div>
             User ID: <%= i.user_id %> <br>
             Price: <%= i.price %> <br>
-            Image:
-            <%= image_tag @user.avatar.url %>
-			<%= image_tag @user.avatar.url(:medium) %>
-			<%= image_tag @user.avatar.url(:thumb) %>
         </div>
     <% end %>
 <% end %>
