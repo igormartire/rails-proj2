@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
       @item.destroy
       flash.notice = "Item removed successfully."
-      redirect_to session.delete(:return_to)
+      redirect_to user_path(current_user.id)
     end
 
   	def create
