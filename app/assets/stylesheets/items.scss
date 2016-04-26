@@ -35,10 +35,21 @@
 .edit_button {
   display:none;
   position: absolute;
-  margin-top: 90%;
-  margin-left: -35px;
+  bottom: 100px;
+  right: 50px;
+}
+
+.remove_button {
+  display:none;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
 }
 
 .item:hover .edit_button {
+  display:block;
+}
+
+.item:hover .remove_button {
   display:block;
 }

@@ -2,7 +2,8 @@
   <div class="col-sm-6 col-md-4">
     <div class="item">
       <% if @user and @user == current_user %>
-        <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-primary edit_button" %>
+        <%= link_to "Edit item", edit_item_path(item.id), class: "btn btn-warning edit_button" %>
+        <%= link_to "Remove item", edit_item_path(item.id), class: "btn btn-danger remove_button" %>
       <% end %>
       <div style="font-weight:bold">
         <%= link_to item.name, item %>
