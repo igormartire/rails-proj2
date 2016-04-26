@@ -1,8 +1,0 @@
-<h1>User</h1>
-<p>E-mail: <%=@user.email%></p>
-<h2>Items</h2>
-<%= render @user.items%>
-<br />
-<% if @user == current_user %>
-  <%= link_to 'Add item', items_new_path, class: "btn btn-primary" %>
-<% end %>
