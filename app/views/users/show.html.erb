@@ -1,7 +1,7 @@
 <div class="page">
 <h1>User Profile</h1>
   <br/>
-  <p>E-mail: <%=ActionView::Helpers::UrlHelper.mail_to(@user.email)%></p>
+  <p>E-mail: <%=view_context.mail_to(@user.email)%></p>
   <br/>
   <% if @user == current_user %>
     <%= link_to 'Add item', items_new_path, class: "btn btn-success btn-lg" %>
