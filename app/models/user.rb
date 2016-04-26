@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
+  validates :email, presence: true, uniqueness: true
+  validates :encrypted_password, presence: true
+
   def username
     self.email[/[^@]+/]
   end
