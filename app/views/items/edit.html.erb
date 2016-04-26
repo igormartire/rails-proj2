@@ -1,7 +1,13 @@
-Update <%= @item.name if @item.name %>
+<h2 style="text-align:center">Update <%= @item.name if @item.name %></h2>
+<div style = "padding: 20px">
+</div>
+
+<div style="text-align:center">
 <%= simple_form_for @item do |f| %>
-  <%= f.input :available as: :boolean %>
-  <%= f.input :price as: :integer %>
-  <%= f.input :description as: :text %>
+  <%= f.input :name %>
+  <%= f.input :available, as: :boolean %>
+  <%= f.input :price, as: :integer %>
+  <%= f.input :description, as: :text %>
   <%= f.button :submit %>
 <% end %>
+</div>

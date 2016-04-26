@@ -1,4 +1,7 @@
+
+<div class="page">
 <h3>Name: <%=@item.name%></h3>
 <h4>Price: $<%=@item.price%></h4>
 <p><strong>Description: </strong><%=@item.description%></p>
-<%= react_component('CommentBox', {:presenter => @presenter.to_json}, {:prerender => true}) %> 
+<%= react_component('CommentBox', {:presenter => @presenter.to_json}, {:prerender => true}) %>
+</div>
