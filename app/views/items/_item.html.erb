@@ -10,7 +10,7 @@
           User ID: <%= item.user_id %> <br>
           Price: <%= item.price %> <br>
           <% if item.avatar %>
-            <%= image_tag item.avatar.url %>
+            <%= image_tag item.avatar.url, class: "img-responsive"%>
           <% else %>
             <p>No image available</p>
           <% end %>
